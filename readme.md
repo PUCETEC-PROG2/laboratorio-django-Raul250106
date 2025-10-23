@@ -7,8 +7,13 @@ Por otra parte se aplica el uso de Modelos en Django y uso de bases de datos rel
 Además el estudiante aprenderá el manejo de Django desde los templates, views, models, así como la generación de API REST usando Django Rest Framework
 
 ## Datos del estudiante
+<<<<<<< HEAD
 - **Nombre:** Raúl Alejandro Luna Vizcaíno
 - **Carrera:** Ingeniería Informatica
+=======
+- **Nombre:** Raul Alejandro Luna Vizcaino
+- **Carrera:** Ingenieria Informatica
+>>>>>>> 37fdf88e9054ad03b8e876504a76cf8d0015bcd5
 
 ## Objetivos 
 - El estudiante debe ser capaz de reconocer y aplicar conceptos básicos del Paradigma Orientado a Objetos (POO) como: Clases, Ojetos, Atributos, Métodos. Así mismo el presente proyecto introduce al desarrollo de aplicaciones Web mediante el uso de Django como marco de trabajo para el desarrollo.
