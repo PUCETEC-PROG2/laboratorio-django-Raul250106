@@ -16,6 +16,7 @@ class Trainer (models.Model):
     last_name = models.CharField(max_length=30, null=False)
     level = models.IntegerField()
     birth = models.DateField()
+    picture = models.ImageField(upload_to='trainer_pictures/', null=True, blank=True)
 
     def __str__(self):
         return self.name
