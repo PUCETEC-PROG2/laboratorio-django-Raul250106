@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
+{% block title} {{ pokemon|capfirst }} {% endblock title}
 {% block content %}
-  <p>
-    Has elegido el pokemon: <strong>{{ pokemon|capfirst }}</strong>
-  </p>
-  <h3>Detalles:</h3>
-  <ul>
-    <li>Nombre: {{ pokemon.name }}</li>
-    <li>Tipo: {{ pokemon.type }}</li>
-    <li>Peso: {{ pokemon.weight }} kg</li>
-    <li>Altura: {{ pokemon.height }} cm</li>
-  </ul>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+    <div style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;">
+      <h3>Detalles:</h3>
+      <ul>
+        <li>Nombre: {{ pokemon.name }}</li>
+        <li>Tipo: {{ pokemon.type }}</li>
+        <li>Peso: {{ pokemon.weight }} kg</li>
+        <li>Altura: {{ pokemon.height }} cm</li>
+        <li>Entrenador: {{ pokemon.trainer }} </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+    <p class="card" style="width: 100%; border-radius: 1rem; border: 0.25rem solid black;">
+      <img src="{{ pokemon.picture.url }}" class="card-img-top" alt="{{ pokemon.name }}" />
+    </p>
+  </div>
+</div>
 {% endblock %}

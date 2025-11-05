@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<p>Bienvenido entrenador(a) <strong>{{ Trainer.name | capfirst }}</strong></p>
-<h3>Detalles:</h3>
-<ul>
-    <li>Nombre: {{ Trainer.name }} </li>
-    <li>Apellido: {{ Trainer.last_name }}</li>
-    <li>Nivel: {{ Trainer.level }} </li>
-    <li>Fecha nacimiento: {{ Trainer.birth }} </li>
-</ul>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;">
+            <h3>Detalles:</h3>
+            <ul>
+                <li>Nombre: {{ Trainer.name }} </li>
+                <li>Apellido: {{ Trainer.last_name }}</li>
+                <li>Nivel: {{ Trainer.level }} </li>
+                <li>Fecha nacimiento: {{ Trainer.birth }} </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <p class="card" style="width: 100%; border-radius: 1rem; border: 0.25rem solid black;">
+            <img src="{{ trainer.picture.url }}" class="card-img-top" alt="{{ trainer.name }}" />
+        </p>
+    </div>
+</div>
 {% endblock %}
