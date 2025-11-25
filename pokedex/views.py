@@ -36,6 +36,10 @@ def entrenador(request, trainer_id):
     }
     return HttpResponse(template.render(context, request))
 
+def ver_entrenadores(request):
+    trainers = Trainer.objects.all()
+    return render(request, 'trainers.html', {'trainers': trainers})
+
 @login_required
 def add_pokemon(request):
     if request.method == "POST":

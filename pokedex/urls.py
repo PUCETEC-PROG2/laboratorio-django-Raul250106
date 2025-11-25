@@ -8,6 +8,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("pokemon/<int:pokemon_id>/", views.pokemon, name="pokemon"),
     path("entrenadores/<int:trainer_id>/", views.entrenador, name="entrenadores"),
+    path("trainers/", views.ver_entrenadores, name="trainers"),
     path("add_pokemon/", views.add_pokemon, name="add_pokemon"),
     path("add_trainer/", views.add_trainer, name="add_trainer"),
     path("edit_pokemon/<int:pokemon_id>/", views.edit_pokemon, name="edit_pokemon"),
