@@ -14,7 +14,9 @@
   <strong>Bienvenido a mi pokedex!</strong>
 </p>
 <h2 class="text-danger text-center" style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;"><strong>Pokemons</strong></h2>
-<a href="{% url 'pokedex:add_pokemon' %}" class="btn btn-danger" style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;">Añadir pokemon</a>
+{% if user.is.authenticated %}
+  <a href="{% url 'pokedex:add_pokemon' %}" class="btn btn-danger" style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;">Añadir pokemon</a>
+{% endif %}
 <div class="row">
   {% for pokemon in pokemons %}
   <div class="col-sm-12 col-md-6 col-lg-4 p-3">
@@ -25,15 +27,19 @@
     </p>
     <div class="text-center m-3">
       <a href="{% url 'pokedex:pokemon' pokemon.id %}" class="btn btn-success"><i class="fa-regular fa-eye"></i></a>
-      <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-outline-dark"><i class="fa-regular fa-pen-to-square"></i></a>
-      <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+      {% if user.is.authenticated %}
+        <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-outline-dark"><i class="fa-regular fa-pen-to-square"></i></a>
+        <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+      {% endif %}
     </div>
   </div>
   {% endfor %}
 </div>
 
 <h2 class="text-danger text-center" style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;"><strong>Entrenadores</strong></h2>
-<a href="{% url 'pokedex:add_trainer' %}" class="btn btn-danger" style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;">Añadir entrenador</a>
+{% if user.is.authenticated %}
+  <a href="{% url 'pokedex:add_trainer' %}" class="btn btn-danger" style="font-family: 'Momo Trust Display', sans-serif; font-weight: 400; font-style: normal;">Añadir entrenador</a>
+{% endif %}
 <div class="row">
   {% for trainer in trainers %}
   <div class="col-sm-12 col-md-6 col-lg-4 p-3">
@@ -44,8 +50,10 @@
     </p>
     <div class="text-center m-3">
       <a href="{% url 'pokedex:entrenadores' trainer.id %}" class="btn btn-success"><i class="fa-regular fa-eye"></i></a>
-      <a href="{% url 'pokedex:edit_trainer' trainer.id %}" class="btn btn-outline-dark"><i class="fa-regular fa-pen-to-square"></i></a>
-      <a href="{% url 'pokedex:delete_trainer' trainer.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+      {% if user.is.authenticated %}
+        <a href="{% url 'pokedex:edit_trainer' trainer.id %}" class="btn btn-outline-dark"><i class="fa-regular fa-pen-to-square"></i></a>
+        <a href="{% url 'pokedex:delete_trainer' trainer.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+      {% endif %}
     </div>
   </div>
   {% endfor %}
