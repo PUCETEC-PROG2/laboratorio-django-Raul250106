@@ -14,7 +14,7 @@ class PokemonViewSet(viewsets.ModelViewSet):
     required_scopes = ['write']
     
     def get_permissions(self):
-        if self.request.method in ['POST', 'GET', 'DELETE']:
+        if self.request.method in ['POST', 'GET', 'DELETE', 'PUT']:
             return [AllowAny()]
         return [TokenHasScope(), IsAuthenticated()]
         
